@@ -14,6 +14,8 @@ games = {}
 def homepage():
     """Show board."""
 
+
+
     return render_template("index.html")
 
 

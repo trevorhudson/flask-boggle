@@ -19,10 +19,15 @@ class BoggleAppTestCase(TestCase):
         app.config['TESTING'] = True
 
     def test_homepage(self):
-        """Make sure information is in the session and HTML is displayed"""
+        """Make sure information is in the session and HTML is displayed.
+        Checks for rendering of Boggle board, and accurate response code
+        """
 
         with self.client as client:
             response = client.get('/')
+            html = response.get_data(as_text = True)
+            self.assertEqual(response.status_code, 200)
+            self.assertIn('<table class="board">' ,html)
             ...
             # test that you're getting a template
 
