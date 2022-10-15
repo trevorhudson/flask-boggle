@@ -120,7 +120,7 @@ class BoggleGame():
             >>> game.check_word_on_board("CAT")
             True
 
-            >>> game.check_word_on_board("COG")
+            >>> game.check_word_on_board("DOG")
             True
 
         It cannot use the same tile twice, though:
